@@ -20,13 +20,24 @@ public class Main {
         bank.findAccount("1001");
         bank.findAccount("9999");
 
+        System.out.println(saving1.balance);
         saving1.deposit(300);
-        transaction1.withdraw(100);
-        saving2.calculateInterest();
+        System.out.println(saving1.balance);
 
-        transaction2.withdraw(-50);
-        transaction3.withdraw(800);
+        saving2.deposit(-100);
+
+        transaction1.calculateInterest();
+        saving2.calculateInterest();
+        System.out.println(transaction1.balance);
+        System.out.println(saving2.balance);
+
+        transaction1.withdraw(-50);
+        transaction2.withdraw(2000);
         transaction3.withdraw(100);
+
+        saving1.withdraw(-50);
+        saving2.withdraw(2500);
+        saving3.withdraw(100);
 
         bank.showAllBalances();
     }
